@@ -30,15 +30,15 @@ NOTE: inspired by https://github.com/jamesward[James Ward's] https://github.com/
 
 image:img/scala_1.png[] image:img/kotlin_1.png[]
 
-WARNING: Flame 🔥 War warning! Applications are written with Groovy (mostly build scripts) and Kotlin.
+WARNING: Flame 🔥 War warning! The demo is written with Groovy (mostly build scripts) and Kotlin.
 Because why not? 💃 
 
 toc::[]
 
 == Into
 
-The application consists Web UI (driver and rider).
-A rider initiates a pick up and the driver picks her.
+The application consists of Web UI (driver and rider).
+A rider initiates a, and the driver picks her.
 
 image::img/driver_picks_rider.gif[]
 
