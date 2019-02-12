@@ -10,8 +10,9 @@ import org.springframework.web.socket.config.annotation.WebSocketHandlerRegistry
 @EnableWebSocket
 class WebsocketConfiguration(@Autowired val webSocketHandler: WebSocketHandler) : WebSocketConfigurer {
   override fun registerWebSocketHandlers(registry: WebSocketHandlerRegistry) {
-    
-    
+
+    registry.addHandler(webSocketHandler, "rider-ws")
+    registry.addHandler(webSocketHandler, "driver-ws")
   }
 
 }

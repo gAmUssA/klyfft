@@ -7,6 +7,7 @@ import org.apache.kafka.clients.producer.ProducerRecord
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.kafka.core.KafkaTemplate
 import org.springframework.stereotype.Component
+import org.springframework.web.socket.CloseStatus
 import org.springframework.web.socket.TextMessage
 import org.springframework.web.socket.WebSocketSession
 import org.springframework.web.socket.handler.TextWebSocketHandler
@@ -27,11 +28,20 @@ class WebSocketHandler(@Autowired val mapper: ObjectMapper,
     } as KafkaConsumer<*, *>
   }
 
+
+  override fun afterConnectionClosed(session: WebSocketSession, status: CloseStatus) {
+    val consumer = session.attributes.get("consumer")
+    if (consumer is KafkaConsumer<*, *>) with(consumer) {
+      unsubscribe()
+      close()
+    }
+  }
+
   override fun handleTextMessage(session: WebSocketSession, textMessage: TextMessage) {
 
     try {
       val driver = session.uri!!.path.contains("driver-ws")
-      
+
       val sink = if (driver) "driver" else "rider"
       val source = if (driver) "rider" else "driver"
 

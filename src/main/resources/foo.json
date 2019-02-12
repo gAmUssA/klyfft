@@ -1,183 +1,918 @@
 {
-  "driver": "a9850837-f136-60d7-7770-dfc8d34d2750",
-  "rider": "31ec87cf-4003-233b-0163-888ae1390c82",
+  "driver": "ba6211d3-7c4e-99f1-30dd-d140fe42dd82",
+  "rider": "760a0f4f-97d1-f3d4-b9fe-685cad020d68",
   "route": {
-    "distance": 2147,
-    "duration": 411,
-    "steps": [
+    "geometry": "mvgxFzeecM[[rAmCrAkCrAoCtAoCtAuClGbC|An@f@\\~@n@~@x@nAnAlFpFtBtBhBlB~@bAnBjBn@hAVZP`@Rj@Nh@Fd@@j@Cd@I`@Od@[l@]^_@PYF[CSSMSIYGe@YkBGgAAk@?a@Bc@Ba@Fe@F_@Nm@b@aBb@iBBKTcAZmATw@HUN[R_@Zk@tByBf@q@tBgDlAuBpAeCf@kA`@w@jBoD`@_Ad@eAz@gCrAuDt@kBh@o@XYb@Gd@Bj@L~@n@`AxABD^`@ZZv@j@f@Fn@?r@Yl@i@V_@hEgG\\]d@e@z@g@b@Md@GTC`APfA`@nK|DbC~@Ro@Na@PYJQbAaAPQbCcCWi@Sc@Qa@Sa@Ue@KUTU@A`B_BDA",
+    "legs": [
       {
-        "distance": 128,
-        "duration": 58,
-        "way_name": "",
-        "mode": "driving",
-        "direction": "W",
-        "heading": 283,
-        "maneuver": {
-          "instruction": "Head west",
-          "type": "depart",
-          "location": {
-            "type": "Point",
-            "coordinates": [
-              12.577162,
-              55.637582
-            ]
+        "summary": "Paterson Plank Road, Road C",
+        "weight": 838.7,
+        "duration": 442,
+        "steps": [
+          {
+            "intersections": [
+              {
+                "out": 0,
+                "entry": [
+                  true
+                ],
+                "bearings": [
+                  37
+                ],
+                "location": [
+                  -74.087502,
+                  40.84087
+                ]
+              }
+            ],
+            "driving_side": "right",
+            "geometry": "mvgxFzeecM[[",
+            "mode": "driving",
+            "maneuver": {
+              "bearing_after": 37,
+              "bearing_before": 0,
+              "location": [
+                -74.087502,
+                40.84087
+              ],
+              "modifier": "right",
+              "type": "depart",
+              "instruction": "Head northeast on 5th Street"
+            },
+            "weight": 17.8,
+            "duration": 4.7,
+            "name": "5th Street",
+            "distance": 19.3
+          },
+          {
+            "intersections": [
+              {
+                "out": 1,
+                "in": 2,
+                "entry": [
+                  true,
+                  true,
+                  false
+                ],
+                "bearings": [
+                  30,
+                  135,
+                  210
+                ],
+                "location": [
+                  -74.087363,
+                  40.841008
+                ]
+              },
+              {
+                "out": 1,
+                "in": 3,
+                "entry": [
+                  true,
+                  true,
+                  true,
+                  false
+                ],
+                "bearings": [
+                  30,
+                  135,
+                  210,
+                  315
+                ],
+                "location": [
+                  -74.086651,
+                  40.840587
+                ]
+              },
+              {
+                "out": 1,
+                "in": 3,
+                "entry": [
+                  true,
+                  true,
+                  true,
+                  false
+                ],
+                "bearings": [
+                  30,
+                  135,
+                  210,
+                  315
+                ],
+                "location": [
+                  -74.08595,
+                  40.840173
+                ]
+              },
+              {
+                "out": 1,
+                "in": 3,
+                "entry": [
+                  true,
+                  true,
+                  true,
+                  false
+                ],
+                "bearings": [
+                  30,
+                  135,
+                  210,
+                  315
+                ],
+                "location": [
+                  -74.085232,
+                  40.839749
+                ]
+              },
+              {
+                "out": 1,
+                "in": 3,
+                "entry": [
+                  true,
+                  true,
+                  true,
+                  false
+                ],
+                "bearings": [
+                  30,
+                  120,
+                  210,
+                  315
+                ],
+                "location": [
+                  -74.084505,
+                  40.839319
+                ]
+              }
+            ],
+            "driving_side": "right",
+            "geometry": "iwgxF~decMrAmCrAkCrAoCtAoCtAuC",
+            "mode": "driving",
+            "maneuver": {
+              "bearing_after": 127,
+              "bearing_before": 36,
+              "location": [
+                -74.087363,
+                40.841008
+              ],
+              "modifier": "right",
+              "type": "turn",
+              "instruction": "Turn right onto Passaic Avenue"
+            },
+            "weight": 67.19999999999999,
+            "duration": 62,
+            "name": "Passaic Avenue",
+            "distance": 384.6
+          },
+          {
+            "intersections": [
+              {
+                "out": 1,
+                "in": 2,
+                "entry": [
+                  false,
+                  true,
+                  false
+                ],
+                "bearings": [
+                  15,
+                  195,
+                  300
+                ],
+                "location": [
+                  -74.083756,
+                  40.838885
+                ]
+              },
+              {
+                "out": 1,
+                "in": 0,
+                "entry": [
+                  false,
+                  true,
+                  true
+                ],
+                "bearings": [
+                  15,
+                  210,
+                  315
+                ],
+                "location": [
+                  -74.084662,
+                  40.83707
+                ]
+              },
+              {
+                "out": 1,
+                "in": 0,
+                "entry": [
+                  false,
+                  true,
+                  true
+                ],
+                "bearings": [
+                  30,
+                  225,
+                  315
+                ],
+                "location": [
+                  -74.085744,
+                  40.835827
+                ]
+              },
+              {
+                "out": 1,
+                "in": 0,
+                "entry": [
+                  false,
+                  true,
+                  true
+                ],
+                "bearings": [
+                  45,
+                  210,
+                  300
+                ],
+                "location": [
+                  -74.086953,
+                  40.834644
+                ]
+              },
+              {
+                "out": 1,
+                "in": 0,
+                "entry": [
+                  false,
+                  true,
+                  true
+                ],
+                "bearings": [
+                  37,
+                  218,
+                  229
+                ],
+                "location": [
+                  -74.087539,
+                  40.834054
+                ]
+              }
+            ],
+            "driving_side": "right",
+            "geometry": "ajgxFnndcMlGbC|An@f@\\~@n@~@x@nAnAlFpFtBtBhBlB~@bAnBjB",
+            "mode": "driving",
+            "maneuver": {
+              "bearing_after": 199,
+              "bearing_before": 126,
+              "location": [
+                -74.083756,
+                40.838885
+              ],
+              "modifier": "right",
+              "type": "end of road",
+              "instruction": "Turn right onto NJ 17 Southbound"
+            },
+            "ref": "NJ 17 Southbound",
+            "weight": 42.1,
+            "duration": 35.900000000000006,
+            "name": "NJ 17 Southbound",
+            "distance": 828
+          },
+          {
+            "intersections": [
+              {
+                "out": 3,
+                "in": 1,
+                "entry": [
+                  false,
+                  false,
+                  true,
+                  true
+                ],
+                "bearings": [
+                  21,
+                  36,
+                  218,
+                  229
+                ],
+                "location": [
+                  -74.088971,
+                  40.832642
+                ]
+              },
+              {
+                "out": 1,
+                "in": 2,
+                "entry": [
+                  false,
+                  true,
+                  false,
+                  false
+                ],
+                "bearings": [
+                  30,
+                  81,
+                  252,
+                  259
+                ],
+                "location": [
+                  -74.090484,
+                  40.833217
+                ]
+              },
+              {
+                "out": 0,
+                "in": 1,
+                "entry": [
+                  true,
+                  false,
+                  true
+                ],
+                "bearings": [
+                  90,
+                  255,
+                  345
+                ],
+                "location": [
+                  -74.09012,
+                  40.833261
+                ]
+              },
+              {
+                "out": 0,
+                "in": 2,
+                "entry": [
+                  true,
+                  true,
+                  false
+                ],
+                "bearings": [
+                  120,
+                  150,
+                  300
+                ],
+                "location": [
+                  -74.088309,
+                  40.832893
+                ]
+              },
+              {
+                "out": 0,
+                "in": 2,
+                "entry": [
+                  true,
+                  false,
+                  false
+                ],
+                "bearings": [
+                  120,
+                  210,
+                  300
+                ],
+                "location": [
+                  -74.087779,
+                  40.832711
+                ]
+              },
+              {
+                "out": 0,
+                "in": 1,
+                "entry": [
+                  true,
+                  false,
+                  false
+                ],
+                "bearings": [
+                  120,
+                  300,
+                  315
+                ],
+                "location": [
+                  -74.087383,
+                  40.832575
+                ]
+              },
+              {
+                "out": 1,
+                "in": 2,
+                "entry": [
+                  true,
+                  true,
+                  false
+                ],
+                "bearings": [
+                  45,
+                  135,
+                  315
+                ],
+                "location": [
+                  -74.086082,
+                  40.831961
+                ]
+              },
+              {
+                "out": 1,
+                "in": 2,
+                "entry": [
+                  true,
+                  true,
+                  false
+                ],
+                "bearings": [
+                  30,
+                  135,
+                  315
+                ],
+                "location": [
+                  -74.085223,
+                  40.831167
+                ]
+              },
+              {
+                "out": 0,
+                "in": 2,
+                "entry": [
+                  true,
+                  true,
+                  false
+                ],
+                "bearings": [
+                  120,
+                  150,
+                  315
+                ],
+                "location": [
+                  -74.083123,
+                  40.829777
+                ]
+              },
+              {
+                "out": 1,
+                "in": 3,
+                "entry": [
+                  true,
+                  true,
+                  true,
+                  false
+                ],
+                "bearings": [
+                  45,
+                  135,
+                  210,
+                  300
+                ],
+                "location": [
+                  -74.082742,
+                  40.829582
+                ]
+              },
+              {
+                "out": 0,
+                "in": 2,
+                "entry": [
+                  true,
+                  true,
+                  false
+                ],
+                "bearings": [
+                  135,
+                  150,
+                  315
+                ],
+                "location": [
+                  -74.082463,
+                  40.829411
+                ]
+              }
+            ],
+            "driving_side": "right",
+            "geometry": "_cfxF`oecMn@hAVZP`@Rj@Nh@Fd@@j@Cd@I`@Od@[l@]^_@PYF[CSSMSIYGe@YkBGgAAk@?a@Bc@Ba@Fe@F_@Nm@b@aBb@iBBKTcAZmATw@HUN[R_@Zk@tByBf@q@tBgDlAuBpAeCf@kA`@w@jBoD`@_Ad@eAz@gCrAuDt@kB",
+            "mode": "driving",
+            "maneuver": {
+              "bearing_after": 227,
+              "bearing_before": 215,
+              "location": [
+                -74.088971,
+                40.832642
+              ],
+              "modifier": "slight right",
+              "type": "off ramp",
+              "instruction": "Take the ramp"
+            },
+            "weight": 141.6,
+            "duration": 104.8,
+            "name": "",
+            "distance": 1600.3
+          },
+          {
+            "intersections": [
+              {
+                "out": 1,
+                "in": 2,
+                "entry": [
+                  true,
+                  true,
+                  false
+                ],
+                "bearings": [
+                  120,
+                  135,
+                  300
+                ],
+                "location": [
+                  -74.078778,
+                  40.827524
+                ]
+              },
+              {
+                "out": 3,
+                "in": 0,
+                "entry": [
+                  false,
+                  true,
+                  true,
+                  true
+                ],
+                "bearings": [
+                  30,
+                  75,
+                  135,
+                  225
+                ],
+                "location": [
+                  -74.078704,
+                  40.826266
+                ]
+              },
+              {
+                "out": 1,
+                "in": 2,
+                "entry": [
+                  true,
+                  true,
+                  false
+                ],
+                "bearings": [
+                  60,
+                  165,
+                  345
+                ],
+                "location": [
+                  -74.077315,
+                  40.822461
+                ]
+              },
+              {
+                "out": 2,
+                "in": 0,
+                "entry": [
+                  false,
+                  false,
+                  true
+                ],
+                "bearings": [
+                  15,
+                  180,
+                  195
+                ],
+                "location": [
+                  -74.078474,
+                  40.819474
+                ]
+              }
+            ],
+            "driving_side": "right",
+            "geometry": "_cexFjoccMh@o@XYb@Gd@Bj@L~@n@`AxABD^`@ZZv@j@f@Fn@?r@Yl@i@V_@hEgG\\]d@e@z@g@b@Md@GTC`APfA`@nK|DbC~@",
+            "mode": "driving",
+            "maneuver": {
+              "bearing_after": 139,
+              "bearing_before": 122,
+              "location": [
+                -74.078778,
+                40.827524
+              ],
+              "modifier": "slight right",
+              "type": "off ramp",
+              "instruction": "Take the ramp"
+            },
+            "weight": 140.70000000000002,
+            "duration": 115,
+            "name": "",
+            "distance": 1113.5
+          },
+          {
+            "intersections": [
+              {
+                "out": 1,
+                "in": 0,
+                "entry": [
+                  false,
+                  true,
+                  true
+                ],
+                "bearings": [
+                  15,
+                  120,
+                  195
+                ],
+                "location": [
+                  -74.078791,
+                  40.81881
+                ]
+              },
+              {
+                "out": 0,
+                "in": 1,
+                "entry": [
+                  true,
+                  false,
+                  true
+                ],
+                "bearings": [
+                  135,
+                  315,
+                  330
+                ],
+                "location": [
+                  -74.078253,
+                  40.818543
+                ]
+              },
+              {
+                "out": 0,
+                "in": 2,
+                "entry": [
+                  true,
+                  false,
+                  false
+                ],
+                "bearings": [
+                  150,
+                  285,
+                  315
+                ],
+                "location": [
+                  -74.078164,
+                  40.818479
+                ]
+              }
+            ],
+            "driving_side": "right",
+            "geometry": "qlcxFloccMRo@Na@PYJQbAaAPQbCcC",
+            "mode": "driving",
+            "maneuver": {
+              "bearing_after": 118,
+              "bearing_before": 199,
+              "location": [
+                -74.078791,
+                40.81881
+              ],
+              "modifier": "left",
+              "type": "turn",
+              "instruction": "Turn left onto Road D"
+            },
+            "weight": 61.4,
+            "duration": 29.299999999999997,
+            "name": "Road D",
+            "distance": 216.6
+          },
+          {
+            "intersections": [
+              {
+                "out": 0,
+                "in": 3,
+                "entry": [
+                  true,
+                  true,
+                  true,
+                  false
+                ],
+                "bearings": [
+                  60,
+                  150,
+                  240,
+                  330
+                ],
+                "location": [
+                  -74.077076,
+                  40.817389
+                ]
+              },
+              {
+                "out": 0,
+                "in": 2,
+                "entry": [
+                  true,
+                  true,
+                  false,
+                  true
+                ],
+                "bearings": [
+                  60,
+                  150,
+                  240,
+                  330
+                ],
+                "location": [
+                  -74.076866,
+                  40.817507
+                ]
+              },
+              {
+                "out": 0,
+                "in": 2,
+                "entry": [
+                  true,
+                  true,
+                  false,
+                  true
+                ],
+                "bearings": [
+                  60,
+                  150,
+                  240,
+                  330
+                ],
+                "location": [
+                  -74.076688,
+                  40.817608
+                ]
+              },
+              {
+                "out": 0,
+                "in": 2,
+                "entry": [
+                  true,
+                  true,
+                  false,
+                  true
+                ],
+                "bearings": [
+                  60,
+                  150,
+                  240,
+                  330
+                ],
+                "location": [
+                  -74.076517,
+                  40.817704
+                ]
+              },
+              {
+                "out": 0,
+                "in": 1,
+                "entry": [
+                  true,
+                  false,
+                  true
+                ],
+                "bearings": [
+                  60,
+                  240,
+                  330
+                ],
+                "location": [
+                  -74.076349,
+                  40.817799
+                ]
+              },
+              {
+                "out": 0,
+                "in": 1,
+                "entry": [
+                  true,
+                  false,
+                  true
+                ],
+                "bearings": [
+                  60,
+                  240,
+                  330
+                ],
+                "location": [
+                  -74.076158,
+                  40.817907
+                ]
+              }
+            ],
+            "driving_side": "right",
+            "geometry": "uccxFvdccMWi@Sc@Qa@Sa@Ue@KU",
+            "mode": "driving",
+            "maneuver": {
+              "bearing_after": 52,
+              "bearing_before": 142,
+              "location": [
+                -74.077076,
+                40.817389
+              ],
+              "modifier": "left",
+              "type": "turn",
+              "instruction": "Turn left"
+            },
+            "weight": 209.3,
+            "duration": 50.599999999999994,
+            "name": "",
+            "distance": 108.1
+          },
+          {
+            "intersections": [
+              {
+                "out": 0,
+                "in": 1,
+                "entry": [
+                  true,
+                  false,
+                  true
+                ],
+                "bearings": [
+                  150,
+                  240,
+                  330
+                ],
+                "location": [
+                  -74.076047,
+                  40.81797
+                ]
+              },
+              {
+                "out": 0,
+                "in": 2,
+                "entry": [
+                  true,
+                  true,
+                  false
+                ],
+                "bearings": [
+                  150,
+                  240,
+                  330
+                ],
+                "location": [
+                  -74.075939,
+                  40.817862
+                ]
+              }
+            ],
+            "driving_side": "right",
+            "geometry": "igcxFh~bcMTU@A`B_BDA",
+            "mode": "driving",
+            "maneuver": {
+              "bearing_after": 142,
+              "bearing_before": 52,
+              "location": [
+                -74.076047,
+                40.81797
+              ],
+              "modifier": "right",
+              "type": "end of road",
+              "instruction": "Turn right"
+            },
+            "weight": 158.6,
+            "duration": 39.699999999999996,
+            "name": "",
+            "distance": 88.1
+          },
+          {
+            "intersections": [
+              {
+                "in": 0,
+                "entry": [
+                  true
+                ],
+                "bearings": [
+                  339
+                ],
+                "location": [
+                  -74.075435,
+                  40.817329
+                ]
+              }
+            ],
+            "driving_side": "right",
+            "geometry": "iccxFnzbcM",
+            "mode": "driving",
+            "maneuver": {
+              "bearing_after": 0,
+              "bearing_before": 159,
+              "location": [
+                -74.075435,
+                40.817329
+              ],
+              "modifier": "left",
+              "type": "arrive",
+              "instruction": "You have arrived at your destination, on the left"
+            },
+            "weight": 0,
+            "duration": 0,
+            "name": "",
+            "distance": 0
           }
-        }
-      },
-      {
-        "distance": 331,
-        "duration": 79,
-        "way_name": "",
-        "mode": "driving",
-        "direction": "S",
-        "heading": 192,
-        "maneuver": {
-          "instruction": "Make a slight right",
-          "type": "bear right",
-          "location": {
-            "type": "Point",
-            "coordinates": [
-              12.576155,
-              55.637056
-            ]
-          }
-        }
-      },
-      {
-        "distance": 98,
-        "duration": 35,
-        "way_name": "",
-        "mode": "driving",
-        "direction": "SW",
-        "heading": 216,
-        "maneuver": {
-          "instruction": "Turn right",
-          "type": "turn right",
-          "location": {
-            "type": "Point",
-            "coordinates": [
-              12.579799,
-              55.635854
-            ]
-          }
-        }
-      },
-      {
-        "distance": 122,
-        "duration": 44,
-        "way_name": "C.F. Møllers Allé",
-        "mode": "driving",
-        "direction": "E",
-        "heading": 102,
-        "maneuver": {
-          "instruction": "Turn left onto C.F. Møllers Allé",
-          "type": "turn left",
-          "location": {
-            "type": "Point",
-            "coordinates": [
-              12.579439,
-              55.63501
-            ]
-          }
-        }
-      },
-      {
-        "distance": 680,
-        "duration": 96,
-        "way_name": "Ørestads Boulevard",
-        "mode": "driving",
-        "direction": "N",
-        "heading": 12,
-        "maneuver": {
-          "instruction": "Turn left onto Ørestads Boulevard",
-          "type": "turn left",
-          "location": {
-            "type": "Point",
-            "coordinates": [
-              12.581331,
-              55.634765
-            ]
-          }
-        }
-      },
-      {
-        "distance": 523,
-        "duration": 67,
-        "way_name": "Vejlands Allé",
-        "mode": "driving",
-        "direction": "E",
-        "heading": 77,
-        "maneuver": {
-          "instruction": "Turn right onto Vejlands Allé",
-          "type": "turn right",
-          "location": {
-            "type": "Point",
-            "coordinates": [
-              12.58371,
-              55.640732
-            ]
-          }
-        }
-      },
-      {
-        "distance": 84,
-        "duration": 17,
-        "way_name": "Røde Mellemvej",
-        "mode": "driving",
-        "direction": "S",
-        "heading": 185,
-        "maneuver": {
-          "instruction": "Turn right onto Røde Mellemvej",
-          "type": "turn right",
-          "location": {
-            "type": "Point",
-            "coordinates": [
-              12.591441,
-              55.64243
-            ]
-          }
-        }
-      },
-      {
-        "distance": 180,
-        "duration": 16,
-        "way_name": "Stenlandsvej",
-        "mode": "driving",
-        "direction": "SW",
-        "heading": 234,
-        "maneuver": {
-          "instruction": "Continue slightly right onto Stenlandsvej",
-          "type": "bear right",
-          "location": {
-            "type": "Point",
-            "coordinates": [
-              12.591203,
-              55.641689
-            ]
-          }
-        }
-      },
-      {
-        "distance": 0,
-        "duration": 0,
-        "way_name": "Kongelundsvej",
-        "mode": "driving",
-        "direction": "N",
-        "heading": 0,
-        "maneuver": {
-          "instruction": "You have arrived at your destination",
-          "type": "arrive",
-          "location": {
-            "type": "Point",
-            "coordinates": [
-              12.58912,
-              55.640705
-            ]
-          }
-        }
+        ],
+        "distance": 4358.4
       }
     ],
-    "geometry": "{czbiBsws~VsEfr@bRxFtR~FTcC|WbIxPfFdA}OdBcWbLmaB`LkaBXgF|AbDhCfAtBNtBUdCh@|`@~LhNguB}eCau@ykB}j@_GgB}f@aN{J{CiMgDqYyIwH}ByI{B}FsBiEsq@iFug@kLcy@sWo`BiXyxA{N{x@aD_TgBmS}AuZaAmRfPfB`LjAzGlBbFxD`FnQzIvg@pHja@fCbJxD`I~EfG`EvBbEtAvCT",
-    "summary": "Ørestads Boulevard, Vejlands Allé"
+    "weight_name": "routability",
+    "weight": 838.7,
+    "duration": 442,
+    "distance": 4358.4
   }
 }
