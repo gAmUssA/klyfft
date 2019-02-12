@@ -26,10 +26,12 @@ the kLyfft app - event-driven app
 
 A uber-like event-driven application example
 
-NOTE: inspired by https://github.com/jamesward[James Ward's] https://github.com/jamesward/koober[Koober]
+NOTE: inspired by https://github.com/jamesward[James Ward's] https://github.com/jamesward/koober[Koober] but much better because Kotlin and Spring Boot used (not Scala 🤮 and Play 🤢)
+
+image:img/scala_1.png[] image:img/kotlin_1.png[]
 
 WARNING: Flame 🔥 War warning! Applications are written with Groovy (mostly build scripts) and Kotlin.
-Because why not? 💃
+Because why not? 💃 
 
 toc::[]
 
@@ -38,7 +40,7 @@ toc::[]
 The application consists Web UI (driver and rider).
 A rider initiates a pick up and the driver picks her.
 
-image::driver_picks_rider.gif[]
+image::img/driver_picks_rider.gif[]
 
 == How to build
 
