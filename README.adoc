@@ -1,0 +1,80 @@
+= kLyfft
+Viktor Gamov <viktor@confluent.io>, © 2019 Confluent, Inc.
+2019-02-12
+:revdate: 2019-02-12 11:49:38 -0600
+:linkattrs:
+:ast: &ast;
+:y: &#10003;
+:n: &#10008;
+:y: icon:check-sign[role="green"]
+:n: icon:check-minus[role="red"]
+:c: icon:file-text-alt[role="blue"]
+:toc: auto
+:toc-placement: auto
+:toc-position: right
+:toc-title: Table of content
+:toclevels: 3
+:idprefix:
+:idseparator: -
+:sectanchors:
+:icons: font
+:source-highlighter: highlight.js
+:highlightjs-theme: idea
+:experimental:
+
+the kLyfft app - event-driven app
+
+A uber-like event-driven application example
+
+NOTE: inspired by https://github.com/jamesward[James Ward's] https://github.com/jamesward/koober[Koober]
+
+WARNING: Flame 🔥 War warning! Applications are written with Groovy (mostly build scripts) and Kotlin.
+Because why not? 💃
+
+toc::[]
+
+== Into
+
+The application consists Web UI (driver and rider).
+A rider initiates a pick up and the driver picks her.
+
+image::driver_picks_rider.gif[]
+
+== How to build
+
+----
+./gradlew clean build
+----
+
+== How to run
+
+=== Prerequisites
+
+* Confluent Platform Enterprise 5.x footnote:[https://www.confluent.io/download/]
+** download it
+** unizip to any folder
+** add folder to `PATH` variable
++
+
+[source,shell]
+----
+export CONFLUENT_PLATFORM_VERSION=5.1.0
+export CONFLUENT_HOME=~/projects/confluent/confluent-ent/$CONFLUENT_PLATFORM_VERSION
+export PATH=$CONFLUENT_HOME/bin:$PATH
+alias cnfl="confluent" #<1>
+
+cnfl start kafka #<2>
+----
+<1> a neat little alias that can save few symbols to type
+<2> start Kafka (zookeeper will be started automatically as a dependency) 
+
+=== Web App
+
+. Obtain an API key from [mapbox.com](https://www.mapbox.com/)
+. Start the Play web app: `MAPBOX_ACCESS_TOKEN=YOUR-MAPBOX-API-KEY ./gradlew bootRun`
+
+- http://localhost:8080/driver - Driver's UI
+- http://localhost:8080/rider - Rider's UI
+
+. on the Rider UI select where do you want to travel
+. on the Driver UI select rider and enjoy the ride! 
