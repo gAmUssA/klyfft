@@ -1,0 +1,183 @@
+{
+  "driver": "a9850837-f136-60d7-7770-dfc8d34d2750",
+  "rider": "31ec87cf-4003-233b-0163-888ae1390c82",
+  "route": {
+    "distance": 2147,
+    "duration": 411,
+    "steps": [
+      {
+        "distance": 128,
+        "duration": 58,
+        "way_name": "",
+        "mode": "driving",
+        "direction": "W",
+        "heading": 283,
+        "maneuver": {
+          "instruction": "Head west",
+          "type": "depart",
+          "location": {
+            "type": "Point",
+            "coordinates": [
+              12.577162,
+              55.637582
+            ]
+          }
+        }
+      },
+      {
+        "distance": 331,
+        "duration": 79,
+        "way_name": "",
+        "mode": "driving",
+        "direction": "S",
+        "heading": 192,
+        "maneuver": {
+          "instruction": "Make a slight right",
+          "type": "bear right",
+          "location": {
+            "type": "Point",
+            "coordinates": [
+              12.576155,
+              55.637056
+            ]
+          }
+        }
+      },
+      {
+        "distance": 98,
+        "duration": 35,
+        "way_name": "",
+        "mode": "driving",
+        "direction": "SW",
+        "heading": 216,
+        "maneuver": {
+          "instruction": "Turn right",
+          "type": "turn right",
+          "location": {
+            "type": "Point",
+            "coordinates": [
+              12.579799,
+              55.635854
+            ]
+          }
+        }
+      },
+      {
+        "distance": 122,
+        "duration": 44,
+        "way_name": "C.F. Møllers Allé",
+        "mode": "driving",
+        "direction": "E",
+        "heading": 102,
+        "maneuver": {
+          "instruction": "Turn left onto C.F. Møllers Allé",
+          "type": "turn left",
+          "location": {
+            "type": "Point",
+            "coordinates": [
+              12.579439,
+              55.63501
+            ]
+          }
+        }
+      },
+      {
+        "distance": 680,
+        "duration": 96,
+        "way_name": "Ørestads Boulevard",
+        "mode": "driving",
+        "direction": "N",
+        "heading": 12,
+        "maneuver": {
+          "instruction": "Turn left onto Ørestads Boulevard",
+          "type": "turn left",
+          "location": {
+            "type": "Point",
+            "coordinates": [
+              12.581331,
+              55.634765
+            ]
+          }
+        }
+      },
+      {
+        "distance": 523,
+        "duration": 67,
+        "way_name": "Vejlands Allé",
+        "mode": "driving",
+        "direction": "E",
+        "heading": 77,
+        "maneuver": {
+          "instruction": "Turn right onto Vejlands Allé",
+          "type": "turn right",
+          "location": {
+            "type": "Point",
+            "coordinates": [
+              12.58371,
+              55.640732
+            ]
+          }
+        }
+      },
+      {
+        "distance": 84,
+        "duration": 17,
+        "way_name": "Røde Mellemvej",
+        "mode": "driving",
+        "direction": "S",
+        "heading": 185,
+        "maneuver": {
+          "instruction": "Turn right onto Røde Mellemvej",
+          "type": "turn right",
+          "location": {
+            "type": "Point",
+            "coordinates": [
+              12.591441,
+              55.64243
+            ]
+          }
+        }
+      },
+      {
+        "distance": 180,
+        "duration": 16,
+        "way_name": "Stenlandsvej",
+        "mode": "driving",
+        "direction": "SW",
+        "heading": 234,
+        "maneuver": {
+          "instruction": "Continue slightly right onto Stenlandsvej",
+          "type": "bear right",
+          "location": {
+            "type": "Point",
+            "coordinates": [
+              12.591203,
+              55.641689
+            ]
+          }
+        }
+      },
+      {
+        "distance": 0,
+        "duration": 0,
+        "way_name": "Kongelundsvej",
+        "mode": "driving",
+        "direction": "N",
+        "heading": 0,
+        "maneuver": {
+          "instruction": "You have arrived at your destination",
+          "type": "arrive",
+          "location": {
+            "type": "Point",
+            "coordinates": [
+              12.58912,
+              55.640705
+            ]
+          }
+        }
+      }
+    ],
+    "geometry": "{czbiBsws~VsEfr@bRxFtR~FTcC|WbIxPfFdA}OdBcWbLmaB`LkaBXgF|AbDhCfAtBNtBUdCh@|`@~LhNguB}eCau@ykB}j@_GgB}f@aN{J{CiMgDqYyIwH}ByI{B}FsBiEsq@iFug@kLcy@sWo`BiXyxA{N{x@aD_TgBmS}AuZaAmRfPfB`LjAzGlBbFxD`FnQzIvg@pHja@fCbJxD`I~EfG`EvBbEtAvCT",
+    "summary": "Ørestads Boulevard, Vejlands Allé"
+  }
+}
