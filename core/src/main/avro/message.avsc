@@ -1,0 +1,219 @@
+{
+  "type": "record",
+  "name": "MessageAvro",
+  "namespace": "io.confluent.devx.klyfft",
+  "fields": [
+    {
+      "name": "driver",
+      "type": "string"
+    },
+    {
+      "name": "rider",
+      "type": "string"
+    },
+    {
+      "name": "status",
+      "type": "string"
+
+    },
+    {
+      "name": "lngLat",
+      "type": {
+        "type": "record",
+        "name": "LngLat",
+        "fields": [
+          {
+            "name": "lat",
+            "type": "double"
+          },
+          {
+            "name": "lng",
+            "type": "double"
+          }
+        ]
+      }
+    },
+    {
+      "name": "timestamp",
+      "type": "long"
+    },
+    {
+      "name": "route",
+      "type": {
+        "type": "record",
+        "name": "Route",
+        "fields": [
+          {
+            "name": "geometry",
+            "type": "string"
+          },
+          {
+            "name": "legs",
+            "type": {
+              "type": "array",
+              "items": {
+                "type": "record",
+                "name": "Legs",
+                "fields": [
+                  {
+                    "name": "summary",
+                    "type": "string"
+                  },
+                  {
+                    "name": "weight",
+                    "type": "double"
+                  },
+                  {
+                    "name": "duration",
+                    "type": "double"
+                  },
+                  {
+                    "name": "steps",
+                    "type": {
+                      "type": "array",
+                      "items": {
+                        "type": "record",
+                        "name": "Steps",
+                        "fields": [
+                          {
+                            "name": "intersections",
+                            "type": {
+                              "type": "array",
+                              "items": {
+                                "type": "record",
+                                "name": "Intersections",
+                                "fields": [
+                                  {
+                                    "name": "out",
+                                    "type": "double"
+                                  },
+                                  {
+                                    "name": "in",
+                                    "type": "double"
+                                  },
+                                  {
+                                    "name": "entry",
+                                    "type": {
+                                      "type": "array",
+                                      "items": "boolean"
+                                    }
+                                  },
+                                  {
+                                    "name": "bearings",
+                                    "type": {
+                                      "type": "array",
+                                      "items": "long"
+                                    }
+                                  },
+                                  {
+                                    "name": "location",
+                                    "type": {
+                                      "type": "array",
+                                      "items": "double"
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          },
+                          {
+                            "name": "driving_side",
+                            "type": "string"
+                          },
+                          {
+                            "name": "geometry",
+                            "type": "string"
+                          },
+                          {
+                            "name": "mode",
+                            "type": "string"
+                          },
+                          {
+                            "name": "maneuver",
+                            "type": {
+                              "type": "record",
+                              "name": "Maneuver",
+                              "fields": [
+                                {
+                                  "name": "bearing_after",
+                                  "type": "long"
+                                },
+                                {
+                                  "name": "bearing_before",
+                                  "type": "long"
+                                },
+                                {
+                                  "name": "location",
+                                  "type": {
+                                    "type": "array",
+                                    "items": "double"
+                                  }
+                                },
+                                {
+                                  "name": "modifier",
+                                  "type": "string"
+                                },
+                                {
+                                  "name": "type",
+                                  "type": "string"
+                                },
+                                {
+                                  "name": "instruction",
+                                  "type": "string"
+                                }
+                              ]
+                            }
+                          },
+                          {
+                            "name": "weight",
+                            "type": "double"
+                          },
+                          {
+                            "name": "duration",
+                            "type": "double"
+                          },
+                          {
+                            "name": "name",
+                            "type": "string"
+                          },
+                          {
+                            "name": "distance",
+                            "type": "double"
+                          },
+                          {
+                            "name": "ref",
+                            "type": "string"
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  {
+                    "name": "distance",
+                    "type": "double"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "name": "weight_name",
+            "type": "string"
+          },
+          {
+            "name": "weight",
+            "type": "double"
+          },
+          {
+            "name": "duration",
+            "type": "double"
+          },
+          {
+            "name": "distance",
+            "type": "double"
+          }
+        ]
+      }
+    }
+  ]
+}
