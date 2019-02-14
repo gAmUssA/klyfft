@@ -16,8 +16,8 @@ import java.util.function.Supplier
 
 @Component
 class WebSocketHandler(@Autowired val mapper: ObjectMapper,
-                       @Autowired val kafkaProducer: KafkaTemplate<String, Message>,
-                       @Autowired val kafkaConsumerSupplier: Supplier<KafkaConsumer<String, Message>>) : TextWebSocketHandler() {
+                       @Autowired val kafkaProducer: KafkaTemplate<String, String>,
+                       @Autowired val kafkaConsumerSupplier: Supplier<KafkaConsumer<String, String>>) : TextWebSocketHandler() {
 
   private fun WebSocketSession.createKafkaConsumer(topic: String): KafkaConsumer<*, *> {
     val attributes = this.attributes
@@ -48,13 +48,15 @@ class WebSocketHandler(@Autowired val mapper: ObjectMapper,
       val kafkaConsumer = session.createKafkaConsumer(source)
 
       val payload = textMessage.payload
-      val message = mapper.readValue(payload, Message::class.java)
+      val message = mapper.readTree(payload)
+      //val timestamp: String = message.get("timestamp").asText()
+      val key: String = if ("driver" == sink) message.get("driver").asText() else message.get("rider").asText()
 
-      kafkaProducer.send(ProducerRecord<String, Message>(sink, message.timestamp.toString(), message))
+      kafkaProducer.send(ProducerRecord<String, String>(sink, key, payload))
 
       kafkaConsumer.poll(Duration.ofMillis(100))
               .map {
-                mapper.writeValueAsString(it.value())
+                it.value() as String
               }
               .forEach {
                 session.sendMessage(TextMessage(it))

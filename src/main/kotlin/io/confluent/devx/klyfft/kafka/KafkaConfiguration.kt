@@ -21,25 +21,25 @@ import java.util.function.Supplier
 @Configuration
 @EnableKafka
 class KafkaConfiguration {
-  
+
   @Value("\${kafka.bootstrapServers}")
-  lateinit var bootstrapServer:String
+  lateinit var bootstrapServer: String
 
   /**
    * Kafka Producer
    */
   @Bean
-  fun producerFactory(): ProducerFactory<String, Message> {
+  fun producerFactory(): ProducerFactory<String, String> {
     val config = mapOf(
             ProducerConfig.BOOTSTRAP_SERVERS_CONFIG to bootstrapServer,
             ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG to StringSerializer::class.java.canonicalName,
-            ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG to MessageSerde::class.java.canonicalName
+            ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG to StringSerializer::class.java.canonicalName
     )
     return DefaultKafkaProducerFactory(config)
   }
 
   @Bean
-  fun kafkaTemplate(): KafkaTemplate<String, Message> {
+  fun kafkaTemplate(): KafkaTemplate<String, String> {
     return KafkaTemplate(producerFactory())
   }
 
@@ -50,7 +50,7 @@ class KafkaConfiguration {
             ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG to bootstrapServer,
             ConsumerConfig.GROUP_ID_CONFIG to "group-klyfft",
             ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG to StringDeserializer::class.java,
-            ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG to MessageSerde::class.java
+            ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG to StringDeserializer::class.java
     )
     val p = Properties()
     p.putAll(conf)
@@ -61,6 +61,6 @@ class KafkaConfiguration {
    * Kafka Consumer
    */
   @Bean
-  fun kafkaConsumerSupplier(@Qualifier("kafka") config: Properties): Supplier<KafkaConsumer<String, Message>> =
-          Supplier { KafkaConsumer<String, Message>(config) }
+  fun kafkaConsumerSupplier(@Qualifier("kafka") config: Properties): Supplier<KafkaConsumer<String, String>> =
+          Supplier { KafkaConsumer<String, String>(config) }
 }
