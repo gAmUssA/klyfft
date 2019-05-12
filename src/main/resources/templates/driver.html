@@ -154,7 +154,7 @@
   };
 
   window.setInterval(function () {
-    if ((marker != null) && (ws.readyState == 1)) {
+    if ((marker != null) && (ws.readyState === 1)) {
       ws.send(JSON.stringify({driver: uuid, lngLat: marker.getLngLat(), status: status, rider: rider}));
     }
   }, 500);

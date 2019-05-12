@@ -75,8 +75,26 @@ cnfl start kafka #<2>
 . Obtain an API key from [mapbox.com](https://www.mapbox.com/)
 . Start the Play web app: `MAPBOX_ACCESS_TOKEN=YOUR-MAPBOX-API-KEY ./gradlew bootRun`
 
-- http://localhost:8080/driver - Driver's UI
-- http://localhost:8080/rider - Rider's UI
+- http://localhost:9090/driver - Driver's UI
+- http://localhost:9090/rider - Rider's UI
 
 . on the Rider UI select where do you want to travel
 . on the Driver UI select rider and enjoy the ride! 
+
+
+=== Docker
+
+. Build a docker image
++
+
+----
+./gradlew jib
+----
+
+. Deploy to Kubernetes
++
+
+----
+kubectl create -f deployment.yaml
+----
+

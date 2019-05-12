@@ -1,0 +1,43 @@
+---
+apiVersion: apps/v1
+kind: "Deployment"
+metadata:
+  name: "klyfft"
+  labels:
+    app: "klyfft"
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: "klyfft"
+  template:
+    metadata:
+      labels:
+        app: "klyfft"
+    spec:
+      affinity:
+        podAntiAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            - labelSelector:
+                matchExpressions:
+                  - key: app
+                    operator: In
+                    values:
+                      - "klyfft"
+              topologyKey: "kubernetes.io/hostname"
+      containers:
+        - name: klyfft
+          image: gcr.io/cloud-private-dev/gamussa/klyfft:latest
+          env:
+            - name: JAVA_TOOL_OPTIONS
+              value: -DLOGLEVEL=INFO
+            - name: MAPBOX_ACCESS_TOKEN
+              value: ##_REPLACE_ME_###
+            - name: BOOTSTRAP_SERVERS
+              value: kafka:9071
+            - name: SASL_JAAS_CONFIG
+              value: org.apache.kafka.common.security.plain.PlainLoginModule required username="test" password="test123";
+            - name: SASL_MECHANISM
+              value: PLAIN
+            - name: SECURITY_PROTOCOL
+              value: SASL_PLAINTEXT
