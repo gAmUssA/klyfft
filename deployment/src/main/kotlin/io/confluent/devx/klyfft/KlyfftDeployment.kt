@@ -12,48 +12,53 @@ fun main() {
   val kafkaClient = DefaultKafkaClient().inNamespace("operator")
 
   val klyfftDeployment = BaseDeployment("klyfft").apply {
-    spec.template.spec.containers = listOf(
-        newContainer {
-          name = serviceName
-          image = "gcr.io/cloud-private-dev/gamussa/klyfft:latest"
-          env = listOf(
-              newEnvVar {
-                name = "MAPBOX_ACCESS_TOKEN"
-                valueFrom {
-                  secretKeyRef {
-                    name = "application-config"
-                    key = "access.token"
-                  }
+    spec.template.spec {
+      containers = listOf(
+          newContainer {
+            name = serviceName
+            image = "gcr.io/cloud-private-dev/gamussa/klyfft:latest"
+            volumeMounts = listOf(
+                newVolumeMount {
+                  name = "application-config"
+                  mountPath = "/etc/credentials/application-config"
+                  readOnly = true
                 }
-              },
-              newEnvVar {
-                name = "BOOTSTRAP_SERVERS"
-                valueFrom {
-                  secretKeyRef {
-                    name = "application-config"
-                    key = "spring.kafka.bootstrap-servers"
-                  }
+            )
+            env = listOf(
+                newEnvVar {
+                  name = "CONFIG_PATH"
+                  value = "/etc/credentials/application-config/application.properties"
+                },
+                newEnvVar {
+                  name = "JAVA_TOOL_OPTIONS"
+                  value = "-DLOGLEVEL=INFO"
+                },
+                newEnvVar {
+                  name = "SASL_JAAS_CONFIG"
+                  value = "org.apache.kafka.common.security.plain.PlainLoginModule required username=\"test\" password=\"test123\";"
+                },
+                newEnvVar {
+                  name = "SASL_MECHANISM"
+                  value = "PLAIN\"test\" password=\"test123\";"
+                },
+                newEnvVar {
+                  name = "SECURITY_PROTOCOL"
+                  value = "SASL_PLAINTEXT"
                 }
-              },
-              newEnvVar {
-                name = "JAVA_TOOL_OPTIONS"
-                value = "-DLOGLEVEL=INFO"
-              },
-              newEnvVar {
-                name = "SASL_JAAS_CONFIG"
-                value = "org.apache.kafka.common.security.plain.PlainLoginModule required username=\"test\" password=\"test123\";"
-              },
-              newEnvVar {
-                name = "SASL_MECHANISM"
-                value = "PLAIN\"test\" password=\"test123\";"
-              },
-              newEnvVar {
-                name = "SECURITY_PROTOCOL"
-                value = "SASL_PLAINTEXT"
-              }
-          )
-        }
-    )
+            )
+
+          }
+      )
+
+      volumes = listOf(
+          newVolume {
+            name = "application-config"
+            secret {
+              secretName = "application-config"
+            }
+          }
+      )
+    }
   }
 
   client.apps().deployments().createOrReplace(klyfftDeployment)

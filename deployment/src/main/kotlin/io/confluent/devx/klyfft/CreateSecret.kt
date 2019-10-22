@@ -22,11 +22,9 @@ fun main(args: Array<String>) {
   val propertiesFile = File(secretValue)
 
   val secretData = if (propertiesFile.exists()) {
-    val properties = Properties()
-    properties.load(propertiesFile.reader())
-    properties.map { (k, v) -> k.toString() to v.toString().toBase64() }.toMap().also {
-      println("Got ${it.size} properties from $secretValue file")
-    }
+    mapOf(
+        propertiesFile.name to propertiesFile.readText().toBase64()
+    )
   } else {
     mapOf(
         "value" to secretValue.toBase64()
