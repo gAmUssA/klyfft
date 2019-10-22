@@ -1,8 +1,7 @@
 package io.confluent.devx.klyfft
 
+import com.fkorotkov.kubernetes.*
 import com.fkorotkov.kubernetes.client.DefaultKafkaClient
-import com.fkorotkov.kubernetes.newContainer
-import com.fkorotkov.kubernetes.newEnvVar
 import io.confluent.devx.klyfft.base.BaseDeployment
 import io.fabric8.kubernetes.client.Config
 import io.fabric8.kubernetes.client.DefaultKubernetesClient
@@ -18,6 +17,24 @@ fun main() {
           name = serviceName
           image = "gcr.io/cloud-private-dev/gamussa/klyfft:latest"
           env = listOf(
+              newEnvVar {
+                name = "MAPBOX_ACCESS_TOKEN"
+                valueFrom {
+                  secretKeyRef {
+                    name = "application-config"
+                    key = "access.token"
+                  }
+                }
+              },
+              newEnvVar {
+                name = "BOOTSTRAP_SERVERS"
+                valueFrom {
+                  secretKeyRef {
+                    name = "application-config"
+                    key = "spring.kafka.bootstrap-servers"
+                  }
+                }
+              },
               newEnvVar {
                 name = "JAVA_TOOL_OPTIONS"
                 value = "-DLOGLEVEL=INFO"
