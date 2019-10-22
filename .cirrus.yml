@@ -2,7 +2,7 @@ container:
   image: gradle:jdk8
 
 task:
-  name: Check
+  name: Build and Check
   gradle_cache:
     folder: ~/.gradle/caches
   check_script: gradle build check
