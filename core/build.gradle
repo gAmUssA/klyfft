@@ -1,0 +1,15 @@
+apply plugin: "com.commercehub.gradle.plugin.avro"
+
+buildscript {
+    dependencies {
+        classpath "com.commercehub.gradle.plugin:gradle-avro-plugin:0.14.2"
+    }
+}
+
+avro {
+    stringType = "CharSequence"
+}
+
+dependencies {
+    compile 'org.apache.avro:avro:1.8.2'
+}

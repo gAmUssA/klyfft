@@ -1,0 +1,75 @@
+buildscript {
+  dependencies {
+    classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:${kotlinVersion}")
+    classpath("org.jetbrains.kotlin:kotlin-allopen:${kotlinVersion}")
+    classpath "gradle.plugin.com.google.cloud.tools:jib-gradle-plugin:${jibPluginVersion}"
+  }
+}
+
+apply plugin: 'kotlin'
+apply plugin: 'kotlin-spring'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
+
+apply plugin: 'com.google.cloud.tools.jib'
+
+def imageBaseName = "klyfft"
+
+jib {
+  to {
+    image = "gcr.io/cloud-private-dev/gamussa/${imageBaseName}"
+    credHelper = 'gcr'
+    from {
+      image = "gcr.io/distroless/java:8"
+    }
+  }
+
+  // TODO: configure via environment variables/configMaps in Kubernetes
+  //extraDirectory = file("${System.properties['user.home']}/.ccloud")
+}
+
+group = 'io.confluent.devx'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+dependencies {
+  compile project(':core')
+  compile "com.fasterxml.jackson.module:jackson-module-kotlin:2.9.+"
+
+  //region webjars
+  compile "org.webjars:vue:2.1.3"
+  compile "org.webjars:ionicons:2.0.1"
+  compile "org.webjars.npm:google-polyline:1.0.0"
+  compile "org.webjars:webjars-locator:0.30"
+  //endregion
+  implementation 'org.springframework.boot:spring-boot-starter-websocket'
+
+  implementation("com.github.gAmUssA:streaming-utils:-SNAPSHOT") {
+    exclude group: 'org.slf4j', module: 'slf4j-log4j12'
+  }
+  compile('org.springframework.boot:spring-boot-starter-thymeleaf')
+  implementation 'org.springframework.kafka:spring-kafka'
+  implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
+  implementation "org.jetbrains.kotlin:kotlin-reflect"
+  testImplementation 'org.springframework.boot:spring-boot-starter-test'
+  testImplementation 'org.springframework.kafka:spring-kafka-test'
+}
+
+compileKotlin {
+  kotlinOptions {
+    freeCompilerArgs = ['-Xjsr305=strict']
+    jvmTarget = '1.8'
+  }
+}
+
+compileTestKotlin {
+  kotlinOptions {
+    freeCompilerArgs = ['-Xjsr305=strict']
+    jvmTarget = '1.8'
+  }
+}
+
+springBoot {
+  mainClassName = 'io.confluent.devx.klyfft.KlyfftApplicationKt'
+}
