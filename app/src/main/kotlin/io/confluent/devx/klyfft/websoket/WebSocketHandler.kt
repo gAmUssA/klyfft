@@ -4,6 +4,7 @@ import com.fasterxml.jackson.databind.ObjectMapper
 import org.apache.kafka.clients.consumer.KafkaConsumer
 import org.apache.kafka.clients.producer.ProducerRecord
 import org.springframework.beans.factory.annotation.Autowired
+import org.springframework.kafka.core.ConsumerFactory
 import org.springframework.kafka.core.KafkaTemplate
 import org.springframework.stereotype.Component
 import org.springframework.web.socket.CloseStatus
@@ -11,17 +12,16 @@ import org.springframework.web.socket.TextMessage
 import org.springframework.web.socket.WebSocketSession
 import org.springframework.web.socket.handler.TextWebSocketHandler
 import java.time.Duration
-import java.util.function.Supplier
 
 @Component
 class WebSocketHandler(@Autowired val mapper: ObjectMapper,
                        @Autowired val kafkaProducer: KafkaTemplate<String, String>,
-                       @Autowired val kafkaConsumerSupplier: Supplier<KafkaConsumer<String, String>>) : TextWebSocketHandler() {
+                       @Autowired val kafkaConsumerFactory: ConsumerFactory<String, String>) : TextWebSocketHandler() {
 
   private fun WebSocketSession.createKafkaConsumer(topic: String): KafkaConsumer<*, *> {
     val attributes = this.attributes
     return attributes.computeIfAbsent("consumer") {
-      kafkaConsumerSupplier.get().apply {
+      kafkaConsumerFactory.createConsumer().apply {
         subscribe(listOf(topic))
       }
     } as KafkaConsumer<*, *>
@@ -29,7 +29,7 @@ class WebSocketHandler(@Autowired val mapper: ObjectMapper,
 
 
   override fun afterConnectionClosed(session: WebSocketSession, status: CloseStatus) {
-    val consumer = session.attributes.get("consumer")
+    val consumer = session.attributes["consumer"]
     if (consumer is KafkaConsumer<*, *>) with(consumer) {
       unsubscribe()
       close()
