@@ -4,7 +4,6 @@ import io.confluent.devx.klyfft.domain.MessageSerde
 import org.apache.avro.io.DatumReader
 import org.apache.avro.io.DecoderFactory
 import org.apache.avro.specific.SpecificDatumReader
-import java.util.*
 
 fun main() {
   val dataFooJsonFile = MessageSerde::class.java.getResource("/foo.json").readText()

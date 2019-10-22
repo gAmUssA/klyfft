@@ -1,7 +1,6 @@
 package io.confluent.devx.klyfft.websoket
 
 import com.fasterxml.jackson.databind.ObjectMapper
-import io.confluent.devx.klyfft.domain.Message
 import org.apache.kafka.clients.consumer.KafkaConsumer
 import org.apache.kafka.clients.producer.ProducerRecord
 import org.springframework.beans.factory.annotation.Autowired

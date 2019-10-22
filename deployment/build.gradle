@@ -1,0 +1,31 @@
+buildscript {
+  dependencies {
+    classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:${kotlinVersion}")
+    classpath("org.jetbrains.kotlin:kotlin-allopen:${kotlinVersion}")
+  }
+}
+
+
+repositories {
+  jcenter()
+  maven { setUrl("https://dl.bintray.com/fkorotkov/maven") }
+}
+
+apply plugin: 'application'
+apply from: "$rootDir/kotlin.gradle"
+
+application {
+  mainClassName = 'io.confluent.devx.klyfft.KlyfftDeploymentKt'
+}
+
+dependencies {
+  implementation "io.fabric8:kubernetes-client:4.6.1"
+  implementation "io.fabric8:kubernetes-model:4.6.1"
+  implementation "com.fkorotkov:k8s-kotlin-dsl:2.4"
+  implementation "com.fkorotkov:k8s-kafka-dsl:2.4"
+  implementation "com.fkorotkov:k8s-kafka-model:2.4"
+  implementation "com.fkorotkov:k8s-kafka-client:2.4"
+  implementation "com.fkorotkov:k8s-zookeeper-dsl:2.4"
+  implementation "com.fkorotkov:k8s-zookeeper-model:2.4"
+  implementation "com.fkorotkov:k8s-zookeeper-client:2.4"
+}
