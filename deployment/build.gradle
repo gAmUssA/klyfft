@@ -18,14 +18,25 @@ application {
   mainClassName = 'io.confluent.devx.klyfft.KlyfftDeploymentKt'
 }
 
+task createSecret(type: JavaExec, dependsOn: classes) {
+  main = "io.confluent.devx.klyfft.CreateSecretKt"
+  classpath = sourceSets.main.runtimeClasspath
+  if (project.hasProperty("secretName") && project.hasProperty("secretValue")) {
+    args secretName, secretValue
+  }
+}
+
 dependencies {
   implementation "io.fabric8:kubernetes-client:4.6.1"
   implementation "io.fabric8:kubernetes-model:4.6.1"
-  implementation "com.fkorotkov:k8s-kotlin-dsl:2.4"
+  implementation "com.fkorotkov:kubernetes-dsl:2.4"
   implementation "com.fkorotkov:k8s-kafka-dsl:2.4"
   implementation "com.fkorotkov:k8s-kafka-model:2.4"
   implementation "com.fkorotkov:k8s-kafka-client:2.4"
   implementation "com.fkorotkov:k8s-zookeeper-dsl:2.4"
   implementation "com.fkorotkov:k8s-zookeeper-model:2.4"
   implementation "com.fkorotkov:k8s-zookeeper-client:2.4"
+
+  testCompile "junit:junit:4.12"
+  testCompile "org.jetbrains.kotlin:kotlin-test-junit:${kotlinVersion}"
 }
