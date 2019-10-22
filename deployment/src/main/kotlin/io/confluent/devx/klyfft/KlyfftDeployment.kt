@@ -8,5 +8,5 @@ fun main() {
   val config = Config.autoConfigure(null)
   val client = DefaultKubernetesClient(config).inNamespace("default")
 
-  val kafkaClient = DefaultKafkaClient().inNamespace("operator")\
+  val kafkaClient = DefaultKafkaClient().inNamespace("operator")
 }
