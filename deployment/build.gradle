@@ -26,6 +26,14 @@ task createSecret(type: JavaExec, dependsOn: classes) {
   }
 }
 
+task createApplicationConfig(type: JavaExec, dependsOn: classes) {
+  main = "io.confluent.devx.klyfft.CreateApplicationConfigKt"
+  classpath = sourceSets.main.runtimeClasspath
+  if (project.hasProperty("configPath")) {
+    args configPath
+  }
+}
+
 task secretUsage(type: JavaExec, dependsOn: classes) {
   main = "io.confluent.devx.klyfft.FindSecretsKt"
   classpath = sourceSets.main.runtimeClasspath

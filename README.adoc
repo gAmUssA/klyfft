@@ -100,10 +100,10 @@ kubectl create -f deployment.yaml
 
 === Deployment with Kotlin Kubernetes DSL
 
-.Deploy secrets 
+.Create Application Config
 [source, shell]
 ----
-./gradlew :deployment:createSecret -PsecretName=application-config -PsecretValue=$PWD/app/src/main/resources/application.properties #<1>
+./gradlew :deployment:createApplicationConfig -PconfigPath=$PWD/app/src/main/resources/application.properties #<1>
 
 kubectl get secret application-config -o yaml   #<2>
 
