@@ -39,6 +39,11 @@ task deploy(type: JavaExec, dependsOn: classes) {
   classpath = sourceSets.main.runtimeClasspath
 }
 
+task undeploy(type: JavaExec, dependsOn: classes) {
+  main = "io.confluent.devx.klyfft.KlyfftDeleteDeploymentKt"
+  classpath = sourceSets.main.runtimeClasspath
+}
+
 dependencies {
   implementation "io.fabric8:kubernetes-client:4.6.1"
   implementation "io.fabric8:kubernetes-model:4.6.1"
