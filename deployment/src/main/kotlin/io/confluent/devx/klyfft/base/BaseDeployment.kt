@@ -27,26 +27,26 @@ class BaseDeployment(
         metadata {
           labels = defaultLabels
         }
-        spec {
-          affinity {
-            podAntiAffinity {
-              requiredDuringSchedulingIgnoredDuringExecution = listOf(
-                  newPodAffinityTerm {
-                    topologyKey = "kubernetes.io/hostname"
-                    labelSelector {
-                      matchExpressions = listOf(
-                          newLabelSelectorRequirement {
-                            key = "app"
-                            operator = "In"
-                            values = listOf(serviceName)
-                          }
-                      )
-                    }
-                  }
-              )
-            }
-          }
-        }
+//        spec {
+//          affinity {
+//            podAntiAffinity {
+//              requiredDuringSchedulingIgnoredDuringExecution = listOf(
+//                  newPodAffinityTerm {
+//                    topologyKey = "kubernetes.io/hostname"
+//                    labelSelector {
+//                      matchExpressions = listOf(
+//                          newLabelSelectorRequirement {
+//                            key = "app"
+//                            operator = "In"
+//                            values = listOf(serviceName)
+//                          }
+//                      )
+//                    }
+//                  }
+//              )
+//            }
+//          }
+//        }
       }
     }
   }
