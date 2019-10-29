@@ -63,6 +63,8 @@ dependencies {
   implementation "com.fkorotkov:k8s-zookeeper-model:2.5"
   implementation "com.fkorotkov:k8s-zookeeper-client:2.5"
 
+  implementation "org.slf4j:slf4j-simple:1.7.26"
+
   testCompile "junit:junit:4.12"
   testCompile "org.jetbrains.kotlin:kotlin-test-junit:${kotlinVersion}"
 }
