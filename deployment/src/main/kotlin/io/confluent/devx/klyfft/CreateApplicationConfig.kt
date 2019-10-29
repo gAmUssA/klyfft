@@ -15,7 +15,7 @@ import kotlin.system.exitProcess
 fun main(args: Array<String>) {
   val config = Config.autoConfigure(null)
   val client = DefaultKubernetesClient(config).inNamespace("default")
-  val kafkaClient = DefaultKafkaClient(config).inNamespace("operator")
+  val kafkaClient = DefaultKafkaClient(config).inNamespace("default")
 
   if (args.size != 1) {
     System.err.println("Expected one argument!")

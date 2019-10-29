@@ -6,7 +6,7 @@ import kotlin.system.exitProcess
 
 fun main() {
   val config = Config.autoConfigure(null)
-  val client = DefaultKubernetesClient(config).inNamespace("default")
+  val client = DefaultKubernetesClient(config)
 
   val klyfftDeployment = client.apps().deployments().list().items.find { it.metadata.name == "klyfft" }
 
