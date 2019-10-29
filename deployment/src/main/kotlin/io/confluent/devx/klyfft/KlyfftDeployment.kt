@@ -26,27 +26,10 @@ fun main() {
             )
             env = listOf(
                 newEnvVar {
-                  name = "CONFIG_PATH"
+                  name = "SPRING_CONFIG_LOCATION"
                   value = "/etc/credentials/application-config/application.properties"
-                },
-                newEnvVar {
-                  name = "JAVA_TOOL_OPTIONS"
-                  value = "-DLOGLEVEL=INFO"
-                },
-                newEnvVar {
-                  name = "SASL_JAAS_CONFIG"
-                  value = "org.apache.kafka.common.security.plain.PlainLoginModule required username=\"test\" password=\"test123\";"
-                },
-                newEnvVar {
-                  name = "SASL_MECHANISM"
-                  value = "PLAIN\"test\" password=\"test123\";"
-                },
-                newEnvVar {
-                  name = "SECURITY_PROTOCOL"
-                  value = "SASL_PLAINTEXT"
                 }
             )
-
           }
       )
 
