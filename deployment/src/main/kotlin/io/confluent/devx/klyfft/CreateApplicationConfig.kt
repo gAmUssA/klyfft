@@ -24,7 +24,11 @@ fun main(args: Array<String>) {
 
   val (configPath) = args
 
-  val propertiesToOverride = kafkaClient.kafkaClusters().list().items.firstOrNull()?.let {
+  val propertiesToOverride = try {
+    kafkaClient.kafkaClusters().list().items.firstOrNull()
+  } catch (e: Throwable) {
+    null
+  }?.let {
     extractSpringProperties(it.status.internalClient)
   } ?: emptyMap()
 
