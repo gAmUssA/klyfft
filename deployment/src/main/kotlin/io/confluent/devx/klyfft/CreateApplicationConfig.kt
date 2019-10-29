@@ -79,7 +79,7 @@ private fun extractSpringProperties(internalClient: String): Map<String, String>
 
   return mapOf(
       "spring.kafka.bootstrap-servers" to internalClientProperties.getProperty("bootstrap.servers"),
-      "spring.kafka.properties.sasl.jaas.config" to internalClientProperties.getProperty("sasl.jaas.config"),
+      "spring.kafka.properties.sasl.jaas.config" to internalClientProperties.getProperty("sasl.jaas.config").replace("\"\"", "\""), // todo: fix on Confluent side
       "spring.kafka.properties.sasl.mechanism" to internalClientProperties.getProperty("sasl.mechanism"),
       "spring.kafka.properties.security.protocol" to internalClientProperties.getProperty("security.protocol")
   )
