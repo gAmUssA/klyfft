@@ -5,7 +5,6 @@ import com.fkorotkov.kubernetes.newSecret
 import io.fabric8.kubernetes.client.Config
 import io.fabric8.kubernetes.client.DefaultKubernetesClient
 import java.io.File
-import java.util.*
 import kotlin.system.exitProcess
 
 fun main(args: Array<String>) {

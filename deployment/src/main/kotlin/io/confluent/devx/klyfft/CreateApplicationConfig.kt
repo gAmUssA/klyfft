@@ -62,14 +62,13 @@ private fun createProperties(secretValue: String, propertiesToMerge: Map<String,
     load(FileInputStream(propertiesFile))
   }
 
-  propertiesToMerge.forEach { name, value ->
+  propertiesToMerge.forEach { (name, value) ->
     properties.setProperty(name, value)
   }
 
-  val propertiesFileContent = StringWriter().also {
+  return StringWriter().also {
     properties.store(it, "application config")
   }.toString()
-  return propertiesFileContent
 }
 
 private fun extractSpringProperties(internalClient: String): Map<String, String> {
