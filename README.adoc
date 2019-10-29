@@ -98,18 +98,22 @@ cnfl start kafka #<2>
 kubectl create -f deployment.yaml
 ----
 
-
 === Deployment with Kotlin Kubernetes DSL
 
 .Deploy secrets 
 [source, shell]
 ----
-./gradlew :deployment:createSecret -PsecretName=application-config -PsecretValue=$PWD/app/src/main/resources/application.properties
+./gradlew :deployment:createSecret -PsecretName=application-config -PsecretValue=$PWD/app/src/main/resources/application.properties #<1>
 
-kubectl get secret application-config -o yaml
+kubectl get secret application-config -o yaml   #<2>
 
-./gradlew :deployment:deploy
+./gradlew :deployment:deploy        #<3>
 
 kubectl get deployments
-----
 
+./gradlew :deployment:undeploy      #<4>
+----
+<1> Deploy application secrets
+<2> check the secret
+<3> Deploy the app
+<4> Undeploy the app
