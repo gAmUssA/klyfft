@@ -1,14 +1,14 @@
 package io.confluent.devx.klyfft
 
-import com.fkorotkov.kubernetes.*
 import com.fkorotkov.kubernetes.client.DefaultKafkaClient
+import com.fkorotkov.kubernetes.metadata
+import com.fkorotkov.kubernetes.newSecret
 import io.fabric8.kubernetes.client.Config
 import io.fabric8.kubernetes.client.DefaultKubernetesClient
 import java.io.File
 import java.io.FileInputStream
 import java.io.StringReader
 import java.io.StringWriter
-import java.lang.IllegalStateException
 import java.util.*
 import kotlin.system.exitProcess
 
@@ -24,13 +24,11 @@ fun main(args: Array<String>) {
 
   val (configPath) = args
 
-  val kafkaCluster = kafkaClient.kafkaClusters().list().items.firstOrNull()
-      ?: throw IllegalStateException("Can't find Kafka cluster!")
+  val propertiesToOverride = kafkaClient.kafkaClusters().list().items.firstOrNull()?.let {
+    extractSpringProperties(it.status.internalClient)
+  } ?: emptyMap()
 
-  val propertiesFileContent = createProperties(
-      configPath,
-      extractSpringProperties(kafkaCluster.status.internalClient)
-  )
+  val propertiesFileContent = createProperties(configPath, propertiesToOverride)
 
   val secretData = mapOf(
       "application.properties" to propertiesFileContent.toBase64()
@@ -76,7 +74,7 @@ private fun extractSpringProperties(internalClient: String): Map<String, String>
 
   return mapOf(
       "spring.kafka.bootstrap-servers" to internalClientProperties.getProperty("bootstrap.servers"),
-      "spring.kafka.properties.sasl.jaas.config" to internalClientProperties.getProperty("sasl.jaas.confi"),
+      "spring.kafka.properties.sasl.jaas.config" to internalClientProperties.getProperty("sasl.jaas.config"),
       "spring.kafka.properties.sasl.mechanism" to internalClientProperties.getProperty("sasl.mechanism"),
       "spring.kafka.properties.security.protocol" to internalClientProperties.getProperty("security.protocol")
   )
