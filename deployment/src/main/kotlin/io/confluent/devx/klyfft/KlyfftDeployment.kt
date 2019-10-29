@@ -16,7 +16,7 @@ fun main() {
       containers = listOf(
           newContainer {
             name = serviceName
-            image = "gcr.io/cloud-private-dev/gamussa/klyfft:latest"
+            image = "gamussa/klyfft:latest"
             volumeMounts = listOf(
                 newVolumeMount {
                   name = "application-config"

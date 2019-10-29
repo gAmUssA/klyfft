@@ -28,10 +28,15 @@ task createSecret(type: JavaExec, dependsOn: classes) {
 
 task secretUsage(type: JavaExec, dependsOn: classes) {
   main = "io.confluent.devx.klyfft.FindSecretsKt"
-  classpath = sourceSets.main.runtimeClasspath + sourceSets.main.compileClasspath
+  classpath = sourceSets.main.runtimeClasspath
   if (project.hasProperty("secretName")) {
     args secretName
   }
+}
+
+task deploy(type: JavaExec, dependsOn: classes) {
+  main = "io.confluent.devx.klyfft.KlyfftDeploymentKt"
+  classpath = sourceSets.main.runtimeClasspath
 }
 
 dependencies {
