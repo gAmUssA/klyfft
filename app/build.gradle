@@ -18,8 +18,12 @@ def imageBaseName = "klyfft"
 
 jib {
   to {
-    image = "gcr.io/cloud-private-dev/gamussa/${imageBaseName}"
-    credHelper = 'gcr'
+    //image = "gcr.io/cloud-private-dev/gamussa/${imageBaseName}"
+    //credHelper = 'gcr'
+    // TODO: add registry config
+    // ./gradlew jibDockerBuild
+    image = "gamussa/${imageBaseName}"
+    credHelper = 'osxkeychain'
     from {
       image = "gcr.io/distroless/java:8"
     }
