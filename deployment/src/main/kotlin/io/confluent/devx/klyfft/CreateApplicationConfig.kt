@@ -29,6 +29,7 @@ fun main(args: Array<String>) {
   } catch (e: Throwable) {
     null
   }?.let {
+    println("Found an available Kafka cluster ${it.metadata.name}!")
     extractSpringProperties(it.status.internalClient)
   } ?: emptyMap()
 
