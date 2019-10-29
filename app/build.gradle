@@ -13,6 +13,7 @@ apply plugin: 'org.springframework.boot'
 apply plugin: 'io.spring.dependency-management'
 
 apply plugin: 'com.google.cloud.tools.jib'
+apply plugin: 'idea'
 
 def imageBaseName = "klyfft"
 
@@ -61,3 +62,14 @@ dependencies {
 springBoot {
   mainClassName = 'io.confluent.devx.klyfft.KlyfftApplicationKt'
 }
+
+idea {
+  module {
+    // if you hate browsing Javadoc
+    downloadJavadoc = false
+
+    // and love reading sources :)
+    downloadSources = true
+  }
+}
+
