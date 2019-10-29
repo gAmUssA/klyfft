@@ -1,6 +1,5 @@
 package io.confluent.devx.klyfft
 
-import com.fkorotkov.kubernetes.client.DefaultKafkaClient
 import io.fabric8.kubernetes.client.Config
 import io.fabric8.kubernetes.client.DefaultKubernetesClient
 import kotlin.system.exitProcess
