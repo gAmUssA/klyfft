@@ -55,13 +55,13 @@ task undeploy(type: JavaExec, dependsOn: classes) {
 dependencies {
   implementation "io.fabric8:kubernetes-client:4.6.1"
   implementation "io.fabric8:kubernetes-model:4.6.1"
-  implementation "com.fkorotkov:kubernetes-dsl:2.5"
-  implementation "com.fkorotkov:k8s-kafka-dsl:2.5"
-  implementation "com.fkorotkov:k8s-kafka-model:2.5"
-  implementation "com.fkorotkov:k8s-kafka-client:2.5"
-  implementation "com.fkorotkov:k8s-zookeeper-dsl:2.5"
-  implementation "com.fkorotkov:k8s-zookeeper-model:2.5"
-  implementation "com.fkorotkov:k8s-zookeeper-client:2.5"
+  implementation "com.fkorotkov:kubernetes-dsl:2.6"
+  implementation "com.fkorotkov:k8s-kafka-dsl:2.6"
+  implementation "com.fkorotkov:k8s-kafka-model:2.6"
+  implementation "com.fkorotkov:k8s-kafka-client:2.6"
+  implementation "com.fkorotkov:k8s-zookeeper-dsl:2.6"
+  implementation "com.fkorotkov:k8s-zookeeper-model:2.6"
+  implementation "com.fkorotkov:k8s-zookeeper-client:2.6"
 
   implementation "org.slf4j:slf4j-simple:1.7.26"
 
